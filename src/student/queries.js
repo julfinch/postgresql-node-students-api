@@ -1,0 +1,13 @@
+const getStudents = "SELECT * FROM students";
+// $1 is the variable ID that we will get in controller [id]
+const getStudentById = "SELECT * FROM students WHERE id = $1";
+// $1 is the variable email that we will get in controller [email]
+const checkEmailExists = "SELECT s FROM students s WHERE s.email = $1";
+// $1 represents the first variable name, $2 for variable email, and so on
+const addStudent = "INSERT INTO students (name, email, age, dob) VALUES ($1, $2, $3, $4)";
+const removeStudent = "DELETE FROM students WHERE id = $1";
+const updateStudent = "UPDATE students SET name = $1 WHERE id = $2";
+
+module.exports = {
+    getStudents, getStudentById, checkEmailExists, addStudent, removeStudent, updateStudent
+}
